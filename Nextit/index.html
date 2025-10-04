@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="service.css">
+</head>
+<body>
+
+  <nav class="navbar-container">
+        <div class="navbar">
+            <a href="index.html" class="navbar-brand">
+                <span class="brand-text"><img src="images/logo-2-160x55.png" alt=""></span>
+            </a>
+
+            <!-- Navigation Links -->
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item">
+                    <a href="./index.html" class="nav-link active">
+                        <span>HOME</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">
+                        <span>ABOUT US</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="service.html" class="nav-link">
+                        <span>SERVICES</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="cta-button">
+                        CONTACT US
+                    </a>
+                </li>
+
+            </ul>
+
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" id="mobileToggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="#" class="mobile-menu-brand">
+                <span class="brand-text"><img src="images/logo-2-160x55.png" alt=""></span>
+            </a>
+            <button class="mobile-menu-close" id="mobileMenuClose">
+                <span>×</span>
+            </button>
+        </div>
+
+        <ul class="mobile-menu-nav">
+            <li class="mobile-menu-item">
+                <a href="#home" class="mobile-menu-link active">
+                    <span>HOME</span>
+                </a>
+            </li>
+
+            <li class="mobile-menu-item">
+                <a href="#About" class="mobile-menu-link">
+                    <span>ABOUT US</span>
+                </a>
+            </li>
+
+            </li>
+            <li class="mobile-menu-item">
+                <a href="portfolio/port.html" class="mobile-menu-link">
+                    <span>SERVICES</span>
+                </a>
+            </li>
+
+        </ul>
+
+        <div class="mobile-cta">
+            <a href="mailto:adaikoteyevert97@gmail.com" class="mobile-cta-button">
+                CONTACT US
+            </a>
+        </div>
+    </div>
+
+
+   <section class="hero">
+<div class="content">
+        <h1>Empowering Small <br> Businesses to Succeed</h1>
+        <p>Building dreams by providing enterprise-level tools, systems and expert support at the fraction of the cost.</p>
+        <a href="#" class="btn1">Explore Now</a>    <a href="#" class="btn2">Explore Now</a>
+    </div>
+   </section>
+
+    <section class="services-section">
+    <!-- Left Text -->
+    <div class="services-text">
+      <h4>WHAT WE DO</h4>
+      <h1>Services we are Offering</h1>
+      <p>
+        NEXTIT Consulting Services empowers African businesses with innovative 
+        digital solutions in ERP, e-commerce, HR, and payments to drive growth 
+        and transformation.
+      </p>
+    </div>
+
+    <!-- Right Cards -->
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-headset"></i>
+        <h3>Business Consulting Services</h3>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-cogs"></i>
+        <h3>Systems Implementation</h3>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-handshake"></i>
+        <h3>Outsourcing Solutions</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="professional">
+    <div class="professional-text">
+        <h2>Bundled Professional <br>Services</h2>
+        <p>At NEXTIT CONSULT, when you pay for one professional, you get the expertise of many. Our bundled service packages mean you can now access a full team of experts without the overheads.</p>
+    </div>
+    <div class="professional-image"><img src="Established-Ground-Rules-For-Meetings-1.jpg" alt=""></div>
+  </section>
+
+  <section class="growth">
+    <img src="how_to_run_an_effective_business_meeting_-_a_step-by-step_guide-min.jpg" alt="">
+    <div class="growth-text">
+        <h1>Tailored for Growth</h1>
+        <p>We provide bundled professional services accross business processes, structures and systems for making enterprise-level support affordable, empwering you tp scale with confidence</p>
+    </div>
+  </section>
+
+  <section class="build">
+     <h2>Let's Buils a Future-Ready Business Together</h2>
+      <a href="#" class="btn1">Explore Now</a> 
+
+  </section>
+
+
+
+
+
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileToggle = document.getElementById('mobileToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+            function openMobileMenu() {
+                mobileToggle.classList.add('active');
+                mobileMenu.classList.add('active');
+                mobileMenuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMobileMenu() {
+                mobileToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            // Toggle hamburger
+            mobileToggle.addEventListener('click', function (e) {
+                e.preventDefault();
+                if (mobileMenu.classList.contains('active')) {
+                    closeMobileMenu();
+                } else {
+                    openMobileMenu();
+                }
+            });
+
+            // Close menu with X button
+            mobileMenuClose.addEventListener('click', closeMobileMenu);
+
+            // Close when overlay is clicked
+            mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+            // Close after clicking any menu link
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+        });
+    </script>
+</body>
+</html>

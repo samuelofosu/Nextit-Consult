@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="service.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+</head>
+
+<body>
+
+
+    <nav class="navbar-container">
+        <div class="navbar">
+            <a href="index.html" class="navbar-brand">
+                <span class="brand-text"><img src="images/logo-2-160x55.png" alt=""></span>
+            </a>
+
+            <!-- Navigation Links -->
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item">
+                    <a href="./index.html" class="nav-link active">
+                        <span>HOME</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">
+                        <span>ABOUT US</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="portfolio/port.html" class="nav-link">
+                        <span>SERVICES</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="cta-button">
+                        CONTACT US
+                    </a>
+                </li>
+
+            </ul>
+
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" id="mobileToggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="#" class="mobile-menu-brand">
+                <span class="brand-text"><img src="images/logo-2-160x55.png" alt=""></span>
+            </a>
+            <button class="mobile-menu-close" id="mobileMenuClose">
+                <span>×</span>
+            </button>
+        </div>
+
+        <ul class="mobile-menu-nav">
+            <li class="mobile-menu-item">
+                <a href="#home" class="mobile-menu-link active">
+                    <span>HOME</span>
+                </a>
+            </li>
+
+            <li class="mobile-menu-item">
+                <a href="#About" class="mobile-menu-link">
+                    <span>ABOUT US</span>
+                </a>
+            </li>
+
+            </li>
+            <li class="mobile-menu-item">
+                <a href="portfolio/port.html" class="mobile-menu-link">
+                    <span>SERVICES</span>
+                </a>
+            </li>
+
+        </ul>
+
+        <div class="mobile-cta">
+            <a href="mailto:adaikoteyevert97@gmail.com" class="mobile-cta-button">
+                CONTACT US
+            </a>
+        </div>
+    </div>
+    <section class="head">
+        <div class="service">
+            <div class="s-text">
+                <h3>Services</h3>
+            </div>
+        </div>
+    </section>
+    <section class="next">
+        <h4>We deliver tailored digital solutions—from ERP and e-commerce to HR, payments, <br>
+            and outsourcing—that help businesses automate, scale, and succeed.</h4>
+        <div class="grid">
+            <div class="grid-child">
+                <div class="grid-head">
+                    <img src="images/customer-support.png" alt="">
+                    <h5>Business Consulting
+                        Services</h5>
+                </div>
+                <p>
+                    Providing structure, strategy, and
+                    expertise to enhance decision-making
+                    and growth through business structure
+                    design, project management, leadership
+                    training, succession planning, culture
+                    formulation, legal consultancy, and
+                    strategic advisory.
+                </p>
+            </div>
+            <div class="grid-child">
+                <div class="grid-head">
+                    <img src="images/execute.png" alt="">
+                    <h5>Systems
+                        Implementation</h5>
+                </div>
+                <p>
+                    Deploying scalable, efficient tools
+                    including Odoo ERP implementation,
+                    business process reengineering,
+                    performance tracking & analytics, and
+                    digital tools deployment to optimize
+                    business processes.
+                </p>
+            </div>
+            <div class="grid-child">
+                <div class="grid-head">
+                    <img src="images/provider (1).png" alt="">
+                    <h5>Outsourcing Solutions</h5>
+                </div>
+                <p>
+                    Flexible access to skilled professionals
+                    without the cost of full-time hires,
+                    including payroll & HR administration,
+                    proposal writing, administrative support,
+                    and specialist talent pool.
+                </p>
+            </div>
+
+        </div>
+    </section>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileToggle = document.getElementById('mobileToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+            function openMobileMenu() {
+                mobileToggle.classList.add('active');
+                mobileMenu.classList.add('active');
+                mobileMenuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMobileMenu() {
+                mobileToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            // Toggle hamburger
+            mobileToggle.addEventListener('click', function (e) {
+                e.preventDefault();
+                if (mobileMenu.classList.contains('active')) {
+                    closeMobileMenu();
+                } else {
+                    openMobileMenu();
+                }
+            });
+
+            // Close menu with X button
+            mobileMenuClose.addEventListener('click', closeMobileMenu);
+
+            // Close when overlay is clicked
+            mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+            // Close after clicking any menu link
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>
